@@ -4,6 +4,53 @@
     overflow-x: hidden;
   }
 
+  #Home {
+    height: auto;
+
+    .row {
+      padding: 50px 30px;
+      flex-direction: column;
+
+      .left {
+        h1 {
+          font-size: 40px !important;
+        }
+      }
+
+      .left,
+      .right {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .right {
+        margin-top: 60px;
+
+        .circles {
+          width: 250px !important;
+          height: 250px !important;
+
+          .circle {
+            height: 220px !important;
+            width: 220px !important;
+            background-color: #13333f1c !important;
+          }
+        }
+        .circle1 {
+          left: -19px !important;
+          top: -25px !important;
+          background-color: #173902 !important;
+        }
+
+        .circle2 {
+          top: 57px !important;
+          right: -10px !important;
+          background-color: #084f22d4 !important;
+        }
+      }
+    }
+  }
+
   #projects {
     padding: 60px 30px !important;
 
@@ -48,8 +95,19 @@
   }
 
   #experience {
+    padding: 60px 40px !important;
+
     .row {
       grid-template-columns: repeat(calc(var(--quantity) / 4), auto) !important;
+    }
+
+    .grids {
+      grid-template-columns: repeat(1, auto) !important;
+      height: auto;
+
+      .grid {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -58,6 +116,14 @@
 
     .about-description {
       text-align: left !important;
+    }
+  }
+
+  #Testimonials {
+    padding: 50px !important;
+
+    main {
+      grid-template-columns: repeat(1, auto) !important;
     }
   }
 }

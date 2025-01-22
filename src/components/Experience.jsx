@@ -65,7 +65,7 @@ const Experience = () => {
             <p>{experience.date}</p>
             <ul>
               {experience.points.map((point) => (
-                <li>{point}</li>
+                <li key={point}>{point}</li>
               ))}
             </ul>
           </motion.div>

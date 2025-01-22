@@ -3,10 +3,8 @@ import { logo } from "../assets/image";
 
 const Navbar = () => {
   const links = [
-    { name: "Home", link: "#Home" },
     { name: "Projects", link: "#projects" },
     { name: "Experiences", link: "#experience" },
-    { name: "Testimonials", link: "#Testimonials" },
     { name: "Contact us", link: "#contact" },
   ];
 
