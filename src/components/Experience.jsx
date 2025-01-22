@@ -54,9 +54,7 @@ const Experience = () => {
       >
         {experiences.map((experience, index) => (
           <motion.div
-            variants={fadeIn("up", `0.${index}`)}
-            initial="hidden"
-            whileInView={"show"}
+          git push origin main
             className="grid"
             key={experience.icon}
           >
