@@ -12,6 +12,9 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { SiMongodb, SiVite } from "react-icons/si";
 
+import { motion } from "motion/react";
+import { experiences, fadeIn, zoomIn } from "./Elements/Elements";
+
 const Experience = () => {
   const icons = [
     { icon: <FaHtml5 />, url: "https://www.w3schools.com/html/" },
@@ -31,10 +34,41 @@ const Experience = () => {
       <h1 className="title">My Experiences</h1>
 
       <div className="row" style={{ "--quantity": icons.length }}>
-        {icons.map((iconDetail) => (
-          <a href={iconDetail.url} target="__blank" key={iconDetail.url}>
+        {icons.map((iconDetail, index) => (
+          <motion.a
+            variants={zoomIn(0.2, `0.${index}`)}
+            initial="hidden"
+            whileInView={"show"}
+            href={iconDetail.url}
+            target="__blank"
+            key={iconDetail.url}
+          >
             {iconDetail.icon}
-          </a>
+          </motion.a>
+        ))}
+      </div>
+
+      <div
+        className="grids"
+        style={{ "--quantityOfExperience": experiences.length }}
+      >
+        {experiences.map((experience, index) => (
+          <motion.div
+            variants={fadeIn("up", `0.${index}`)}
+            initial="hidden"
+            whileInView={"show"}
+            className="grid"
+            key={experience.icon}
+          >
+            <img src={experience.icon} alt="" />
+            <h2>{experience.title}</h2>
+            <p>{experience.date}</p>
+            <ul>
+              {experience.points.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </motion.div>
         ))}
       </div>
     </section>

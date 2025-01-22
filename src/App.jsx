@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
+import "./Responsive.css";
 
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -30,10 +31,10 @@ const App = () => {
 
       <div className="App">
         <Home />
-        <About />
         <Experience />
         <Projects />
         <Testimonials />
+        <About />
         <Contact />
         <Footer />
       </div>

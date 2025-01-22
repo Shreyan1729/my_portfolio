@@ -1,0 +1,63 @@
+@media (max-width: 768px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+  #projects {
+    padding: 60px 30px !important;
+
+    .sub-title {
+      width: 90% !important;
+      margin-left: 5px !important;
+    }
+
+    main {
+      flex-direction: column;
+
+      .project {
+        width: 100% !important;
+        margin: 15px 0 !important;
+      }
+    }
+  }
+
+  #contact {
+    padding: 60px 20px !important ;
+
+    .sub-title {
+      width: 90% !important;
+      margin-left: 5px !important;
+    }
+
+    .row {
+      flex-direction: column;
+
+      form,
+      .right {
+        width: 100% !important;
+      }
+
+      form {
+        input,
+        textarea {
+          width: 350px !important;
+        }
+      }
+    }
+  }
+
+  #experience {
+    .row {
+      grid-template-columns: repeat(calc(var(--quantity) / 4), auto) !important;
+    }
+  }
+
+  #about {
+    margin: 0 !important;
+
+    .about-description {
+      text-align: left !important;
+    }
+  }
+}
