@@ -1,42 +1,373 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+:root {
+  /* Background Colors */
+  --bg-black: #0d1117; /* Deep black with a subtle tint */
+  --bg-dark-blue: #1e293b; /* Dark navy blue */
+  --bg-dark-green: #1a2e25; /* Forest green */
+  --bg-dark-gray: #2a2a2a; /* Neutral dark gray */
+  --bg-dark-purple: #2d132c; /* Dark purple */
+  --bg-dark-brown: #3e2c2c; /* Chocolate brown */
+  --bg-dark-teal: #13333f; /* Dark teal blue */
+  --bg-dark-red: #2a1a1a; /* Deep burgundy */
+
+  /* Accent Colors */
+  --accent-blue: #3b82f6; /* Blue for links/buttons */
+  --accent-green: #22c55e; /* Emerald green for success */
+  --accent-purple: #a855f7; /* Vibrant purple for highlights */
+  --accent-red: #ef4444; /* Bright red for errors */
+  --accent-yellow: #eab308; /* Yellow for warnings */
+
+  /* Text Colors */
+  --text-light: #f8f9fa; /* Light text for dark backgrounds */
+  --text-muted: #b0b3b8; /* Muted gray for secondary text */
+  --text-dark: #212529; /* Dark text for light themes */
+
+  /* Borders and Shadows */
+  --border-dark: #3e4c59; /* Border color for dark themes */
+  --shadow-dark: rgba(0, 0, 0, 0.5); /* Shadow for dark elements */
+  --shadow-light: rgba(255, 255, 255, 0.1); /* Subtle light shadow */
+
+  /* Font Families */
+  --font-primary: "Poppins", sans-serif; /* Modern, clean, versatile */
+  --font-secondary: "Roboto", sans-serif; /* Professional and readable */
+  --font-accent: "Playfair Display", serif; /* Elegant serif font for accents */
+  --font-monospace: "Fira Code", monospace; /* Monospace for code snippets */
+  --font-heading: "Montserrat", sans-serif; /* Bold and stylish for headings */
+  --font-body: "Lato", sans-serif; /* Friendly and readable body text */
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  background-color: var(--bg-dark-blue);
+  top: 0;
+  z-index: 5;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: var(--font-primary);
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .links {
+    display: flex;
+    list-style-type: none;
+
+    li {
+      padding: 10px;
+      font-size: 17px;
+      cursor: pointer;
+      transition: all 0.15s;
+
+      &:hover {
+        color: var(--accent-blue);
+      }
+    }
+  }
+}
+
+#SmallNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  background-color: var(--bg-dark-blue);
+  top: 0;
+  z-index: 5;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: var(--font-primary);
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .menu {
+    font-size: 26px;
+    cursor: pointer;
+  }
+}
+
+#projects {
+  background-color: var(--bg-dark-teal);
   text-align: center;
-}
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px;
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+  main {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+    .project {
+      width: calc(90% / var(--quantity));
+      background-color: var(--bg-dark-blue);
+      height: 400px;
+      margin: 15px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 15px;
+      padding: 30px 15px;
+
+      h2 {
+        font-size: 25px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center !important;
+        margin-bottom: 15px;
+      }
+
+      .img-div {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .left {
+          position: absolute;
+          bottom: -30px;
+          right: 20px;
+          color: white;
+          font-size: 20px;
+          transform: rotate(45deg);
+          cursor: pointer;
+          transition: all 0.2s;
+
+          &:hover {
+            transform: rotate(135deg);
+          }
+        }
+
+        .github {
+          position: absolute;
+          top: 30px;
+          right: 30px;
+          color: white;
+          font-size: 20px;
+          background-color: var(--bg-dark-gray);
+          padding: 10px;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          box-shadow: -1px 2px 6px 6px var(--shadow-light);
+          cursor: pointer;
+        }
+
+        img {
+          width: 90%;
+          max-height: 180px;
+          margin-bottom: 15px;
+          border-radius: 6px;
+        }
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+
+        li {
+          margin: 5px;
+        }
+
+        .React {
+          color: var(--accent-blue);
+        }
+
+        .Tailwind {
+          color: #2b8ab8;
+        }
+
+        .Slick {
+          color: #3498db;
+        }
+
+        .Mongodb {
+          color: #02870a;
+        }
+
+        .ParticlesJS {
+          color: var(--accent-green);
+        }
+
+        .Framer {
+          color: #f4e915;
+        }
+
+        .ViteJS {
+          color: #ffb810;
+        }
+      }
+
+      p {
+        text-align: left;
+      }
+    }
   }
-  to {
-    transform: rotate(360deg);
+}
+
+#contact {
+  padding: 60px;
+  /* background-color: var(--bg-dark-teal); */
+  text-align: center;
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .right {
+      width: 50%;
+      margin-top: 20px;
+    }
+
+    form {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+
+      .input {
+        margin-top: 20px;
+        position: relative;
+
+        input,
+        textarea {
+          padding: 15px 20px;
+          font-size: 18px;
+          width: 400px;
+          border: none;
+          background: var(--bg-dark-teal);
+          border-bottom: 4px solid var(--bg-black);
+          color: white;
+          outline: none;
+          border-radius: 16px 16px 0px 0px;
+        }
+
+        textarea {
+          height: 65px !important;
+        }
+
+        label {
+          position: absolute;
+          left: 10px;
+          top: -14px;
+          color: var(--text-muted);
+          background: var(--bg-dark-blue);
+          padding: 2px 10px;
+          border-radius: 5px;
+        }
+      }
+
+      button {
+        border: none;
+        outline: none;
+        background-color: #154252;
+        color: white;
+        padding: 17px 25px;
+        font-size: 16px;
+        border-radius: 12px;
+        margin-top: 15px;
+        border-bottom: 3px solid var(--bg-black);
+        cursor: pointer;
+        transition: all 0.15s;
+
+        &:active {
+          border-bottom: 1px solid var(--bg-black);
+          margin-top: 17px;
+        }
+
+        &:hover {
+          background-color: var(--bg-dark-teal);
+        }
+      }
+    }
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+#experience {
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .row {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(var(--quantity), auto);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    a {
+      margin: 0 20px;
+      font-size: 50px;
+      transition: all 0.15s;
+      color: var(--text-muted);
+
+      &:hover {
+        color: var(--text-light);
+      }
+    }
   }
 }
 
-.card {
-  padding: 2em;
+Footer {
+  padding: 20px 0;
 }
 
-.read-the-docs {
-  color: #888;
+.title {
+  font-size: 40px;
+  color: white;
+}
+.sub-title {
+  margin-top: 25px;
+  text-align: left;
+  width: 65%;
+  margin-left: 30px;
+  font-size: 17px;
 }
