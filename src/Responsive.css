@@ -106,6 +106,7 @@
       height: auto;
 
       .grid {
+        height: auto;
         margin-bottom: 20px;
       }
     }

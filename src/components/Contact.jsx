@@ -1,10 +1,27 @@
-import React from "react";
-import { motion } from "motion/react";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 import { fadeIn, zoomIn } from "./Elements/Elements";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = "service_insc9qz";
+const TEMPLATE_ID = "template_nu4crvf";
+const PUBLIC_KEY = "esEyqC79vVMGcwhKK";
 
 const Contact = () => {
-  const handelSubmit = (e) => {
-    e.preventdefault();
+  const form = useRef();
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
+      () => {
+        alert("Message sent successfully! We will contact you soon.");
+        form.current.reset();
+      },
+      (error) => {
+        console.error("Failed to send message:", error);
+        alert("Message failed to send. Please try again later.");
+      }
+    );
   };
 
   return (
@@ -18,7 +35,7 @@ const Contact = () => {
         Contact Me
       </motion.h1>
       <motion.p
-        variants={fadeIn("right", `0`)}
+        variants={fadeIn("right", 0)}
         initial="hidden"
         whileInView={"show"}
         className="sub-title"
@@ -31,30 +48,30 @@ const Contact = () => {
 
       <div className="row">
         <motion.form
-          variants={fadeIn("right", `0`)}
+          variants={fadeIn("right", 0)}
           initial="hidden"
           whileInView={"show"}
+          ref={form}
+          onSubmit={handleSend}
         >
           <div className="input">
-            <input type="text" required />
-            <label htmlFor="input">Your Name:</label>
+            <input type="text" name="from_name" id="name" required />
+            <label htmlFor="name">Your Name:</label>
           </div>
           <div className="input">
-            <input type="email" required />
-            <label htmlFor="input">Your Email Address:</label>
+            <input type="email" name="from_email" id="email" required />
+            <label htmlFor="email">Your Email Address:</label>
           </div>
           <div className="input">
-            <textarea type="text" required></textarea>
-            <label htmlFor="input">Your Message</label>
+            <textarea name="message" id="message" required></textarea>
+            <label htmlFor="message">Your Message:</label>
           </div>
 
-          <button type="submit" onSubmit={handelSubmit}>
-            Send Message
-          </button>
+          <button type="submit">Send Message</button>
         </motion.form>
 
         <motion.iframe
-          variants={fadeIn("left", `0`)}
+          variants={fadeIn("left", 0)}
           initial="hidden"
           whileInView={"show"}
           className="right"

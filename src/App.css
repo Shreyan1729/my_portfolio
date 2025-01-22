@@ -84,11 +84,19 @@
         transition: all 0.15s;
 
         &:hover {
-          color: var(--accent-blue);
+          color: var(--text-light);
         }
       }
     }
   }
+}
+
+.small-navbar-main {
+  height: 100%;
+  width: 100%;
+  background: #1a2e1cde;
+  z-index: 200;
+  position: absolute;
 }
 
 #SmallNavbar {
@@ -117,7 +125,8 @@
     }
   }
 
-  .menu {
+  .menu,
+  .cross {
     font-size: 26px;
     cursor: pointer;
   }
@@ -140,6 +149,20 @@
 
     .left {
       width: 50%;
+
+      .icons {
+        margin-top: 30px;
+
+        a {
+          font-size: 25px;
+          color: var(--text-light);
+          margin: 10px;
+
+          &:hover {
+            color: var(--text-muted);
+          }
+        }
+      }
 
       h1 {
         font-size: 50px;
@@ -664,5 +687,6 @@
   margin-left: 30px;
   font-size: 17px;
 }
-
-/* About.css */
+.overflow-y-hidden {
+  overflow-y: hidden;
+}

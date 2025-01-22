@@ -21,7 +21,8 @@ export const ProjectDetails = [
     name: "My_Mathematics",
     img: My_Mathematics,
     img: My_Mathematics,
-    url: "https://my-mathematics.vercel.app",
+    // url: "https://my-mathematics.vercel.app",
+    url: null,
     description:
       "An educational website, My_Mathematics, designed to help students prepare effectively for Math Olympiad competitions.",
     frameWorks: ["ViteJS", "Mongodb", "Slick CSS", "Framer Motion"],
