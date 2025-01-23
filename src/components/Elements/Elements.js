@@ -29,7 +29,7 @@ export const ProjectDetails = [
     url: null,
     description:
       "An educational website, My_Mathematics, designed to help students prepare effectively for Math Olympiad competitions.",
-    frameWorks: ["ViteJS", "Mongodb", "Slick CSS", "Framer Motion"],
+    frameWorks: ["Vite", "Mongodb", "Slick CSS", "Framer Motion"],
   },
   {
     name: "Periodic_Table",
@@ -38,7 +38,7 @@ export const ProjectDetails = [
     url: "https://periodic-table-ebon.vercel.app",
     description:
       "A web application that provides an interactive and visually appealing periodic table. Designed for students, teachers, and chemistry enthusiasts to explore element properties, atomic structure, and more.",
-    frameWorks: ["ViteJS", "Tailwind CSS", "Framer Motion"],
+    frameWorks: ["Vite", "Tailwind CSS", "Framer Motion"],
   },
 ];
 
