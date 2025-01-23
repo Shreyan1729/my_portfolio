@@ -1,5 +1,3 @@
-// "use client";
-
 import React from "react";
 import { fadeIn, testimonials } from "./Elements/Elements";
 import { FaQuoteLeft } from "react-icons/fa6";
@@ -32,6 +30,8 @@ const Testimonials = () => {
           </motion.div>
         ))}
       </main>
+
+      <div className="background-color"></div>
     </section>
   );
 };
