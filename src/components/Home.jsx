@@ -2,7 +2,6 @@ import React from "react";
 import { FaWhatsapp, FaFacebookF, FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { fadeIn } from "./Elements/Elements";
-import {motion} from 'farmer-motion'
 
 const Home = () => {
   const socialMedia = [
@@ -31,12 +30,7 @@ const Home = () => {
   return (
     <section id="Home">
       <div className="row">
-        <motion.div
-          className="left"
-          variants={fadeIn("left", 0)}
-          initial="hidden"
-          whileInView={"show"}
-        >
+        <div className="left">
           <h1>
             Hi guys, <br /> I'm Shreyan Dey!
           </h1>
@@ -54,7 +48,7 @@ const Home = () => {
               </a>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         <div className="right">
           <div className="circles">
