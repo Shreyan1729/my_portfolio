@@ -2,6 +2,7 @@ import React from "react";
 import { FaWhatsapp, FaFacebookF, FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { fadeIn } from "./Elements/Elements";
+import {motion} from 'farmer-motion'
 
 const Home = () => {
   const socialMedia = [
