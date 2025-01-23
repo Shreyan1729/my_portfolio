@@ -1,6 +1,6 @@
 // "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { fadeIn, testimonials } from "./Elements/Elements";
 import { FaQuoteLeft } from "react-icons/fa6";
 import useMousePosition from "./Elements/useMousePosition";
@@ -8,10 +8,6 @@ import useMousePosition from "./Elements/useMousePosition";
 import { motion } from "motion/react";
 
 const Testimonials = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const { x, y } = useMousePosition();
-  const size = isHovered ? 400 : 40;
-
   return (
     <section id="Testimonials">
       <p className="what">What my friends say about me</p>
