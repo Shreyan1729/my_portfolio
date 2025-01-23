@@ -1,6 +1,8 @@
 import React from "react";
 import { FaWhatsapp, FaFacebookF, FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { motion } from "motion/react";
+import { fadeIn, zoomIn } from "./Elements/Elements";
 
 const Home = () => {
   const socialMedia = [
@@ -41,21 +43,33 @@ const Home = () => {
             applications that leave a lasting impact.
           </p>
           <div className="icons">
-            {socialMedia.map((social) => (
-              <a href={social.href} target="__blank" key={social.href}>
+            {socialMedia.map((social, index) => (
+              <motion.a
+                variants={fadeIn("down", 0)}
+                initial="hidden"
+                whileInView={"show"}
+                href={social.href}
+                target="__blank"
+                key={social.href}
+              >
                 {social.icon}
-              </a>
+              </motion.a>
             ))}
           </div>
         </div>
 
-        <div className="right">
+        <motion.div
+          variants={zoomIn(0.1, 0.4)}
+          initial="hidden"
+          whileInView={"show"}
+          className="right"
+        >
           <div className="circles">
             <div className="circle"></div>
           </div>
           <div className="circle1"></div>
           <div className="circle2"></div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

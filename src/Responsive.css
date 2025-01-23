@@ -4,6 +4,14 @@
     overflow-x: hidden;
   }
 
+  .error {
+    height: 90vh !important;
+
+    p {
+      margin: 25px 30px;
+    }
+  }
+
   #Home {
     height: auto;
 
