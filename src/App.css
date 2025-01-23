@@ -223,7 +223,10 @@
           height: 250px;
           width: 250px;
           z-index: 50;
-          background-color: #13333fb8;
+          background-image: url(./components/Elements/computer.png);
+          background-position: center;
+          background-size: 100% 110%;
+          background-repeat: no-repeat;
         }
       }
     }

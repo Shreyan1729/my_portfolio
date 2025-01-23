@@ -7,6 +7,10 @@ import fullStack from "./fullStake.png";
 import React from "./react.png";
 import webDevelopment from "./webDevelopment.png";
 
+import computer from "./computer.png";
+
+export { computer };
+
 export const ProjectDetails = [
   {
     name: "MyCoaching",
